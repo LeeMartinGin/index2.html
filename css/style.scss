@@ -1,0 +1,452 @@
+@mixin web {
+    @media (max-width: 1920px) {
+        @content;
+    }
+    
+}
+
+@mixin ipad {
+    @media (max-width: 768px){
+        @content;
+    }
+}
+@mixin iphone {
+    @media (max-width: 360px){
+        @content;
+    }
+}
+//全域宣告//
+body{   
+    padding-left: 16.5%;
+    padding-right: 16.4%;
+    margin: 0;
+    position: relative;
+    top: 0;
+}
+.header{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background-color: black;
+    height: 104px;
+}
+
+.container{
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    height: 53px;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+a,li{
+    padding: 17px 20px;
+    color: white;
+    text-decoration: none;
+}
+.burger_btn{
+    display: none;
+}
+.container_main{
+    text-align: center;
+}
+.YT_page{
+  position: relative;
+  right: 120px;
+  margin: 40px;
+}
+.buyPage{
+    display: flex;
+    justify-content: center;
+    border-bottom: gray 1px solid;
+    position: relative;
+    left: 5px;
+}
+.buyPage_1{
+    position: relative;
+    right: 85px;
+    text-align: center;
+}
+.buyPage_2{
+    position: relative;
+    left: 85px;
+    text-align: center;
+}
+.about{
+  display: flex;
+  justify-content: space-between;
+}
+.comIcon{
+  position: relative;
+  left: 16%;
+  top: 185px;
+}
+.comIcon img:nth-child(2){
+  position: relative;
+  bottom: 4px;
+}
+.howConnect{
+  display: flex;
+  position: relative;
+  right: 25%;
+  top: 30px;
+}
+.service p:nth-child(1){
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+.connect p:nth-child(1){
+  font-weight: bold;
+}
+.connect{
+  position: relative;
+  left: 25%;
+}
+footer{
+  position: relative;
+  top: 90px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 150px;
+  width: 100%;
+}
+.rules{
+  height: 150px;
+  line-height: 150px;
+}
+.buy,.buy_2{
+    margin: 0;
+    padding: 0;
+    color: blue;
+}
+.classic,.classic_2{
+  font-weight: bolder;
+}
+//RWD content
+@include ipad{
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  .header{
+    padding: 0;
+    margin: 0;
+    width: 768px;
+  }
+  .container {
+    background-color: white;
+  }
+  .burger_btn {
+    display: block;
+    position: absolute;
+    top: 19px;
+  }
+  .searchIcon {
+    position: relative;
+    left: 90%;
+    bottom: 75px;
+  }
+  .menu{
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2.3s;
+    position: absolute;
+    z-index: 100;
+    top: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: black;
+  }
+  .menu li{
+    float: none;
+    border-bottom: 1px dashed white;
+  }
+  .menu li a{
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+  }
+  li{
+    margin: 0;
+    padding: 0;
+  }
+  a:hover{
+    background-color: white;
+    color: black;
+  }
+  .menu-show .menu{
+    max-height: 350px;
+  }
+  .container_main{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 53px;
+    width: 768px;
+  }
+  .YT_page{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 1px;
+    top: 30px;
+  }
+  .buyPage{
+    position: relative;
+    left: 0;
+    display: block;
+    border-bottom: gray 1px solid;
+    padding-top: 50px;
+    height: 600px;
+  }
+  .buyPage_1{
+    display: flex;
+    position: relative;
+    left: 7%;
+  }
+  .buyPage_2{
+    display: flex;
+    position: relative;
+    left: 7%;
+    top: 80px;
+  }
+  .comIcon{
+    position: relative;
+    left: 60px;
+  }
+  .service p{
+    padding: 0;
+    margin: 10px;
+  }
+  .connect p{
+    padding: 0;
+    margin: 10px;
+  }
+  .connect p:nth-child(1){
+    padding-bottom: 30px;
+  }
+  .classic{
+    position: relative;
+    left: 15%;
+    top: 50px;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  .classic_2{
+    position: relative;
+    left: 13.5%;
+    top: 50px;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  .buy{
+    position: relative;
+    left: 5.5%;
+    top: 100px;
+    color: blue;
+  }
+  .buy_2{
+    position: relative;
+    left: 0;
+    top: 100px;
+    color: blue;
+  }
+}
+@include iphone{
+  .searchIcon{
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2.3s;
+    position: absolute;
+    z-index: 101;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+  body {
+  width: 320px;
+  padding: 0;
+  margin: 0;
+  }
+  .header {
+    width: 100%;
+    height: 60px;  
+  }
+  .logoPicture{
+    position: relative;
+    top: 10px;
+  }
+  .container {
+    background-color: white;
+  }
+  .burger_btn{
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    padding: 5px;
+  }
+  .fas{
+    width: 30px;
+    height: 30px;
+  }
+  .menu{
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2.3s;
+    position: absolute;
+    z-index: 100;
+    top: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: black;
+  }
+  .menu li{
+    float: none;
+    border-bottom: 1px dashed white;
+  }
+  .menu li a{
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+  }
+  li{
+    margin: 0;
+    padding: 0;
+  }
+  a:hover{
+    background-color: white;
+    color: black;
+  }
+  .menu-show .menu{
+    max-height: 350px;
+  }
+  .search-show .searchIcon{
+    max-height: 350px;
+  }
+  .container_main{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+  }
+  .buyPage{
+    position: relative;
+    left: 35px;
+    margin: 0;
+    padding-top: 0;
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .buyPage_1{
+    width: auto;
+    position: relative;
+    left: 0;
+    flex-direction: column;
+  }
+  .buyPage_2{
+    position: relative;
+    top: 45px;
+    left: 0;
+    flex-direction: column;
+  }
+  .comIcon{
+    display: flex;
+    position: relative;
+    left: 45px;
+    top: 300px;
+    height: 50px;
+  }
+  .comIcon img{
+    width: 50px;
+    height: 50px;
+  }
+  .howConnect{
+    position: relative;
+    right: 110px;
+    flex-direction: column;
+    width: 640px;
+  }
+  .service{    
+    position: relative;
+    left: 0;
+  }
+  .service p:nth-child(1){
+    padding-bottom: 5px;
+  }
+  .service p{
+    font-size: 15px;
+  }
+  .connect{
+    position: relative;
+    left: 0;
+  }
+  .connect p:nth-child(1){
+    padding-bottom: 5px;
+  }
+  .connect p{
+    font-size: 15px;
+  }
+  .classic{
+    position: relative;
+    top: 10px;
+    left: 0;
+    margin: 0;
+  }
+  .buy{
+    height: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .buy p{
+    position: relative;
+    top: 15px;
+    margin: 0;
+    font-size: 20px;
+  }
+  .classic_2{
+    position: relative;
+    top: 10px;
+    left: 0;
+    margin: 0;
+  }
+  .buy_2{
+    height: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .buy_2 p{
+    position: relative;
+    top: 15px;
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
+
